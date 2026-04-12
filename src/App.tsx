@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, MapPin, Calendar, Clock, Music, Volume2, VolumeX, Copy, Check, ExternalLink, Settings } from "lucide-react";
+import { Sparkles, MapPin, Calendar, Clock, Music, Volume2, VolumeX, Copy, Check, ExternalLink, Settings, Camera } from "lucide-react";
 import { Routes, Route, useSearchParams, Link } from "react-router-dom";
 
 /**
@@ -270,7 +270,7 @@ function WeddingInvitation() {
   const [submitted, setSubmitted] = useState({ rsvp: false, wish: false });
 
   // IMPORTANT: Replace this with your actual Google Apps Script Web App URL
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwyJWkwv7UlRBKVnhKNbk-kyUXbdaTHvgJp6SCMg8WWPn1bbjMjyIf9RaxdgE-dw3Sr/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw27GpF2TKE4l8yLdejrNk0HaEo_8GJjAUpsAvPEN2CPu-L7reajCuDRYRoHnwnwcS_/exec";
 
   const handleRSVPSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -1105,6 +1105,43 @@ function WeddingInvitation() {
                         alt=""
                         className="relative z-10 mt-8 w-40 h-40 md:w-56 md:h-56 object-contain mix-blend-multiply drop-shadow-[0_12px_24px_rgba(212,175,55,0.2)] mandala-gold-filter"
                       />
+                    </div>
+                  </motion.div>
+                </div>
+              </section>
+              
+              {/* Add Your Memories Section */}
+              <section className="cv-auto py-24 md:py-32 bg-white relative overflow-hidden flex flex-col items-center border-t border-theme-100/50">
+                <div className="absolute inset-0 opacity-[0.02] paper-grain pointer-events-none" />
+                <div className="container mx-auto px-4 max-w-4xl text-center relative z-10 w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="w-16 h-16 bg-theme-50 rounded-full flex items-center justify-center text-theme-600 mb-8 border border-theme-100 shadow-sm">
+                      <Camera className="w-8 h-8" />
+                    </div>
+                    <span className="text-[10px] md:text-[12px] uppercase tracking-[0.5em] text-theme-600 font-bold mb-4 block">Captures Of Love</span>
+                    <h2 className="font-playball text-[3.5rem] md:text-[5rem] text-theme-900 leading-none mb-8">Add Your Memories</h2>
+                    <p className="text-stone-500 text-sm md:text-lg leading-relaxed max-w-xl mx-auto mb-12 font-light tracking-wide">
+                      Your perspective is unique! We'd be honored if you could share the photos and videos you captured during our special day.
+                    </p>
+                    <button
+                      onClick={() => window.open('https://drive.google.com/drive/folders/12gPGGMVN5GwrbBTbRlmlCd1AQzW3S7DX', '_blank')}
+                      className="inline-flex items-center gap-4 bg-theme-800 text-white px-12 py-5 rounded-full font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-theme-900 hover:shadow-xl hover:shadow-theme-900/20 transition-all duration-300 group"
+                    >
+                      <span className="w-1.5 h-1.5 bg-white rotate-45 group-hover:scale-150 transition-transform" />
+                      Upload to Drive
+                      <ExternalLink className="w-4 h-4 opacity-70" />
+                      <span className="w-1.5 h-1.5 bg-white rotate-45 group-hover:scale-150 transition-transform" />
+                    </button>
+                    
+                    <div className="mt-16 flex items-center gap-3 opacity-40">
+                      <div className="h-px w-8 bg-theme-300" />
+                      <div className="w-1.5 h-1.5 rotate-45 bg-theme-400" />
+                      <div className="h-px w-8 bg-theme-300" />
                     </div>
                   </motion.div>
                 </div>

@@ -2,7 +2,7 @@
  * Google Apps Script for Wedding Invitation Form Submissions
  * 
  * Instructions:
- * 1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/1le3qwSYv5mXXspUOOeK6F7eelJFm-wy9Fo-acOYG2H4
+ * 1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/1CWi7whscDQnuSt_niH5MBq12OM8hR5sPPF5-H1oGzgU
  * 2. Go to Extensions > Apps Script
  * 3. Delete any code there and paste this code.
  * 4. Click 'Deploy' > 'New Deployment'
@@ -10,11 +10,12 @@
  * 6. Set 'Execute as' to 'Me'
  * 7. Set 'Who has access' to 'Anyone'
  * 8. Click 'Deploy' and copy the 'Web App URL'
- * 9. Update the VITE_SCRIPT_URL in your code or .env with this URL.
+ * 9. Update the SCRIPT_URL in App.tsx with this URL.
  */
 
 function doPost(e) {
-  var sheetId = "1le3qwSYv5mXXspUOOeK6F7eelJFm-wy9Fo-acOYG2H4";
+  // Updated Spreadsheet ID from user
+  var sheetId = "1CWi7whscDQnuSt_niH5MBq12OM8hR5sPPF5-H1oGzgU";
   var ss = SpreadsheetApp.openById(sheetId);
   
   var data;
@@ -26,6 +27,7 @@ function doPost(e) {
   }
 
   var formType = data.formType;
+  // Map 'wish' to 'Wishes' and 'rsvp' to 'RSVP' sheets
   var sheetName = formType === 'rsvp' ? 'RSVP' : 'Wishes';
   var sheet = ss.getSheetByName(sheetName) || ss.insertSheet(sheetName);
 
