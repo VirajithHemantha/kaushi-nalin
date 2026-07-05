@@ -2,7 +2,7 @@
  * Google Apps Script for Wedding Invitation Form Submissions
  * 
  * Instructions:
- * 1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/1CWi7whscDQnuSt_niH5MBq12OM8hR5sPPF5-H1oGzgU
+ * 1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/1qWXfpB5Ubt_uzojdba4ogWFuyLSpkAIvaiyBkhbino0
  * 2. Go to Extensions > Apps Script
  * 3. Delete any code there and paste this code.
  * 4. Click 'Deploy' > 'New Deployment'
@@ -15,7 +15,7 @@
 
 function doPost(e) {
   // Updated Spreadsheet ID from user
-  var sheetId = "1CWi7whscDQnuSt_niH5MBq12OM8hR5sPPF5-H1oGzgU";
+  var sheetId = "1qWXfpB5Ubt_uzojdba4ogWFuyLSpkAIvaiyBkhbino0";
   var ss = SpreadsheetApp.openById(sheetId);
   
   var data;
