@@ -533,7 +533,7 @@ function WeddingInvitation() {
                       transition={{ delay: 1, duration: 0.8 }}
                       className="font-playball text-[3rem] sm:text-[3.5rem] md:text-[5.5rem] text-stone-800 leading-[1.1] drop-shadow-sm"
                     >
-                      Kaushi
+                      Nalin
                     </motion.h1>
                     <motion.div
                       initial={{ scale: 0 }}
@@ -549,7 +549,7 @@ function WeddingInvitation() {
                       transition={{ delay: 1.4, duration: 0.8 }}
                       className="font-playball text-[3rem] sm:text-[3.5rem] md:text-[5rem] text-stone-800 leading-[1.1] drop-shadow-sm"
                     >
-                      Nalin
+                      Kaushi
                     </motion.h1>
                   </div>
 
@@ -616,7 +616,7 @@ function WeddingInvitation() {
 
                 <div className="relative w-full flex flex-col md:flex-row items-center justify-center md:items-stretch gap-6 md:gap-10 my-12 md:my-20 z-10 px-2 lg:px-8">
 
-                  {/* Nimmi's Card */}
+                  {/* Nalin's Card */}
                   <motion.div
                     initial={{ opacity: 0, x: -30, y: 20 }}
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -627,10 +627,10 @@ function WeddingInvitation() {
                     <div className="absolute inset-0 opacity-[0.02] paper-grain pointer-events-none" />
                     <div className="relative z-10 space-y-4 py-8 md:py-12">
                       <div className="space-y-2">
-                        <p className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-bold text-stone-400">Beloved daughter of</p>
-                        <p className="text-xs md:text-sm font-cinzel text-stone-600 tracking-wide leading-relaxed">Mr.D.L Piyathissa & Mrs. W.A.Rathnalatha</p>
+                        <p className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-bold text-stone-400">Beloved son of</p>
+                        <p className="text-xs md:text-sm font-cinzel text-stone-600 tracking-wide leading-relaxed">Mr. H. M. Nandasiri & Mrs. K. Wijenayaka</p>
                       </div>
-                      <h3 className="text-5xl md:text-7xl font-playball text-theme-800 group-hover:scale-110 transition-transform duration-700 pt-6 drop-shadow-sm">Kaushi</h3>
+                      <h3 className="text-5xl md:text-7xl font-playball text-theme-800 group-hover:scale-110 transition-transform duration-700 pt-6 drop-shadow-sm">Nalin</h3>
                     </div>
                   </motion.div>
 
@@ -649,7 +649,7 @@ function WeddingInvitation() {
                     <div className="hidden md:block w-px h-32 bg-gradient-to-b from-theme-300 to-transparent" />
                   </div>
 
-                  {/* Rishan's Card - Offset structurally on desktop */}
+                  {/* Kaushi's Card - Offset structurally on desktop */}
                   <motion.div
                     initial={{ opacity: 0, x: 30, y: 20 }}
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -661,10 +661,10 @@ function WeddingInvitation() {
                     <div className="absolute inset-0 opacity-[0.02] paper-grain pointer-events-none" />
                     <div className="relative z-10 space-y-4 py-8 md:py-12">
                       <div className="space-y-2">
-                        <p className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-bold text-stone-400">Beloved son of</p>
-                        <p className="text-xs md:text-sm font-cinzel text-stone-600 tracking-wide leading-relaxed">Mr. H.M.Nandasiri & Mrs. K. Wijenayaka</p>
+                        <p className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-bold text-stone-400">Beloved daughter of</p>
+                        <p className="text-xs md:text-sm font-cinzel text-stone-600 tracking-wide leading-relaxed">Mr. D. L. Piyathissa & Mrs. W. A. Rathnalatha</p>
                       </div>
-                      <h3 className="text-5xl md:text-7xl font-playball text-theme-800 group-hover:scale-110 transition-transform duration-700 pt-6 drop-shadow-sm">Nalin</h3>
+                      <h3 className="text-5xl md:text-7xl font-playball text-theme-800 group-hover:scale-110 transition-transform duration-700 pt-6 drop-shadow-sm">Kaushi</h3>
                     </div>
                   </motion.div>
                 </div>
