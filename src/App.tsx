@@ -395,12 +395,12 @@ function WeddingInvitation() {
                 {/* Envelope Illustrations */}
                 <InviteImage
                   src={mandalaImage}
-                  className="absolute -top-20 md:-top-28 -left-20 md:-left-28 w-56 md:w-72 h-56 md:h-72 opacity-80 mandala-fdca65-filter"
+                  className="absolute -top-20 md:-top-28 -left-20 md:-left-28 w-56 md:w-72 h-56 md:h-72 opacity-80 mandala-light-badge-filter"
                   alt=""
                 />
                 <InviteImage
                   src={mandalaImage}
-                  className="absolute -bottom-20 md:-bottom-28 -left-20 md:-left-28 w-56 md:w-72 h-56 md:h-72 opacity-80 -rotate-90 mandala-fdca65-filter"
+                  className="absolute -bottom-20 md:-bottom-28 -left-20 md:-left-28 w-56 md:w-72 h-56 md:h-72 opacity-80 -rotate-90 mandala-light-badge-filter"
                   alt=""
                 />
 
@@ -422,12 +422,12 @@ function WeddingInvitation() {
                 {/* Envelope Illustrations */}
                 <InviteImage
                   src={mandalaImage}
-                  className="absolute -top-20 md:-top-28 -right-20 md:-right-28 w-56 md:w-72 h-56 md:h-72 opacity-80 rotate-90 mandala-fdca65-filter"
+                  className="absolute -top-20 md:-top-28 -right-20 md:-right-28 w-56 md:w-72 h-56 md:h-72 opacity-80 rotate-90 mandala-light-badge-filter"
                   alt=""
                 />
                 <InviteImage
                   src={mandalaImage}
-                  className="absolute -bottom-20 md:-bottom-28 -right-20 md:-right-28 w-56 md:w-72 h-56 md:h-72 opacity-80 rotate-180 mandala-fdca65-filter"
+                  className="absolute -bottom-20 md:-bottom-28 -right-20 md:-right-28 w-56 md:w-72 h-56 md:h-72 opacity-80 rotate-180 mandala-light-badge-filter"
                   alt=""
                 />
               </motion.div>

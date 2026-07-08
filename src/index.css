@@ -97,6 +97,10 @@ body {
   filter: invert(97%) sepia(39%) saturate(4323%) hue-rotate(311deg) brightness(104%) contrast(98%);
 }
 
+.mandala-light-badge-filter {
+  filter: brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(542%) hue-rotate(338deg) brightness(97%) contrast(92%);
+}
+
 .mandala-art {
   width: 100%;
   height: 100%;
