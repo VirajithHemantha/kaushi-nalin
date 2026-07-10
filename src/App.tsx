@@ -566,7 +566,7 @@ function WeddingInvitation() {
                     </div>
                     <div className="font-cinzel space-y-1">
                       <p className="text-xl md:text-4xl text-stone-700 tracking-[0.15em] md:tracking-[0.3em] font-bold whitespace-nowrap">03<sup className="text-xs md:text-lg align-super">rd</sup> AUGUST 2026</p>
-                      <p className="text-xs md:text-sm text-theme-600 tracking-[0.2em] uppercase font-bold">Green Haven Hotel, Meetiyagoda</p>
+                      <p className="text-xs md:text-sm text-theme-600 tracking-[0.2em] uppercase font-bold">GREEN HEAVEN HOTEL, meetiyagoda</p>
                     </div>
                   </motion.div>
                 </div>
@@ -779,7 +779,7 @@ function WeddingInvitation() {
                         <span className="text-theme-600 font-bold uppercase tracking-[0.4em] text-[9px] md:text-[11px]">The Venue</span>
                       </div>
                       <h2 className="font-playball text-[3.5rem] sm:text-[4rem] md:text-[5.5rem] text-theme-900 leading-[1] drop-shadow-sm ml-[-4px]">
-                        Green Haven Hotel
+                        GREEN HEAVEN HOTEL
                       </h2>
                     </div>
 
@@ -791,7 +791,7 @@ function WeddingInvitation() {
                           <MapPin className="w-4 h-4 text-theme-500" />
                         </div>
                         <p className="text-lg md:text-xl text-stone-700 font-cinzel font-medium leading-relaxed tracking-wide">
-                          Green Haven Hotel,<br />Kukeegoda Road, Meetiyagoda.
+                          GREEN HEAVEN HOTEL,<br />Kuleegoda Road meetiyagoda
                         </p>
                       </div>
 
@@ -823,7 +823,7 @@ function WeddingInvitation() {
                     {/* The Maps iframe */}
                     <div className="absolute inset-0 w-full h-full scale-[1.2] group-hover:scale-[1.15] transition-transform duration-[2s]">
                       <iframe
-                        src="https://maps.google.com/maps?q=Green%20Haven%20Hotel%20Meetiyagoda&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        src="https://maps.google.com/maps?q=Green%20Heaven%20Hotel%20Meetiyagoda&t=&z=14&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
