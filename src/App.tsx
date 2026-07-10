@@ -602,7 +602,7 @@ function WeddingInvitation() {
                   <p className="text-theme-700 text-[9px] md:text-[12px] tracking-[0.4em] md:tracking-[0.6em] uppercase font-bold text-center leading-loose">
                     {guestName ? (
                       <>
-                        <span className="text-theme-900 border-b border-theme-400 pb-1 mb-2 inline-block">{guestName}</span>
+                        <span className="font-cinzel text-2xl md:text-4xl text-theme-900 border-b border-theme-400 pb-3 mb-4 inline-block capitalize tracking-[0.2em] px-8 font-semibold">{guestName}</span>
                         <br />
                         you are cordially invited to celebrate the union of
                       </>
@@ -682,7 +682,7 @@ function WeddingInvitation() {
                     <div className="flex flex-col items-center flex-1">
                       <Calendar className="w-6 h-6 md:w-8 md:h-8 text-theme-500 mb-4 opacity-80" />
                       <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-stone-400 font-bold mb-3">The Date</p>
-                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">MONDAY, 03 AUGUST</p>
+                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">MONDAY, 03<sup>rd</sup> AUGUST</p>
                       <p className="font-cinzel text-lg md:text-xl text-theme-600 tracking-[0.3em] font-normal mt-2">2026</p>
                     </div>
 
