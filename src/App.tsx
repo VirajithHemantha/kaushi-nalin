@@ -204,12 +204,12 @@ function WeddingInvitation() {
   const guestName = searchParams.get("to");
 
   const [rsvpData, setRsvpData] = useState({ name: guestName || "", guests: "1", dietary: "" });
-  const [wishData, setWishData] = useState({ name: "", message: "" });
+  const [wishData, setWishData] = useState({ name: guestName || "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState({ rsvp: false, wish: false });
   const [submitted, setSubmitted] = useState({ rsvp: false, wish: false });
 
   // IMPORTANT: Replace this with your actual Google Apps Script Web App URL
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxzPqFJEz2Ep2Fg7ODKbgNEQxfxBmzrwZhfusrW-MGGlg0FeWqP_w82wlxL-gKmKBw5Hg/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxamsd7QVEn7QbiGXUWD5Cypd_G32-mx1V-pE0xwY1xbrgCFITDyo84cyTIGvzrbBjJYQ/exec";
 
   const handleRSVPSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -565,8 +565,8 @@ function WeddingInvitation() {
                       <div className="h-px w-full bg-gradient-to-l from-transparent via-theme-300 to-theme-400" />
                     </div>
                     <div className="font-cinzel space-y-1">
-                      <p className="text-2xl md:text-4xl text-stone-700 tracking-[0.2em] md:tracking-[0.3em] font-bold">03 AUGUST 2026</p>
-                      <p className="text-xs md:text-sm text-theme-600 tracking-[0.2em] uppercase font-bold">Green Heaven Hotel, Meetiyagoda</p>
+                      <p className="text-xl md:text-4xl text-stone-700 tracking-[0.15em] md:tracking-[0.3em] font-bold whitespace-nowrap">03<sup className="text-xs md:text-lg align-super">rd</sup> AUGUST 2026</p>
+                      <p className="text-xs md:text-sm text-theme-600 tracking-[0.2em] uppercase font-bold">Green Haven Hotel, Meetiyagoda</p>
                     </div>
                   </motion.div>
                 </div>
@@ -779,7 +779,7 @@ function WeddingInvitation() {
                         <span className="text-theme-600 font-bold uppercase tracking-[0.4em] text-[9px] md:text-[11px]">The Venue</span>
                       </div>
                       <h2 className="font-playball text-[3.5rem] sm:text-[4rem] md:text-[5.5rem] text-theme-900 leading-[1] drop-shadow-sm ml-[-4px]">
-                        Green Heaven Hotel
+                        Green Haven Hotel
                       </h2>
                     </div>
 
@@ -791,7 +791,7 @@ function WeddingInvitation() {
                           <MapPin className="w-4 h-4 text-theme-500" />
                         </div>
                         <p className="text-lg md:text-xl text-stone-700 font-cinzel font-medium leading-relaxed tracking-wide">
-                          Green Heaven Hotel, Meetiyagoda -<br /> KuleegodaRoad,Meetiyagoda.
+                          Green Haven Hotel,<br />Kukeegoda Road, Meetiyagoda.
                         </p>
                       </div>
 
@@ -823,7 +823,7 @@ function WeddingInvitation() {
                     {/* The Maps iframe */}
                     <div className="absolute inset-0 w-full h-full scale-[1.2] group-hover:scale-[1.15] transition-transform duration-[2s]">
                       <iframe
-                        src="https://maps.google.com/maps?q=Green%20Heaven%20Hotel%20Meetiyagoda&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        src="https://maps.google.com/maps?q=Green%20Haven%20Hotel%20Meetiyagoda&t=&z=14&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
@@ -1088,27 +1088,56 @@ function WeddingInvitation() {
 function AdminPage() {
   const [prefix, setPrefix] = useState("Mr.");
   const [name, setName] = useState("");
-  const [copied, setCopied] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
+  const [copiedMsg, setCopiedMsg] = useState(false);
+  const [generated, setGenerated] = useState(false);
 
   const guestName = `${prefix} ${name}`.trim();
   const baseUrl = window.location.origin;
   const generatedLink = `${baseUrl}/?to=${encodeURIComponent(guestName)}`;
 
-  const handleCopy = () => {
+  const messageTemplate = `Dear ${guestName} ❤️
+
+With joyful hearts, we warmly invite you to celebrate one of the most special days of our lives as we begin our journey together.
+
+Please view our wedding invitation and all the event details through the link below 🌐:
+
+${generatedLink}
+
+Your presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.
+
+With love,
+❤️ Nalin & Kaushi`;
+
+  const handleGenerate = () => {
+    if (!name) return;
+    setGenerated(true);
+  };
+
+  const handleCopyLink = () => {
+    if (!name) return;
     navigator.clipboard.writeText(generatedLink);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedLink(true);
+    setTimeout(() => setCopiedLink(false), 2500);
+  };
+
+  const handleCopyMessage = () => {
+    if (!name) return;
+    navigator.clipboard.writeText(messageTemplate);
+    setCopiedMsg(true);
+    setTimeout(() => setCopiedMsg(false), 2500);
   };
 
   return (
-    <div className="min-h-screen bg-[#faf9f6] flex items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-[#faf9f6] flex items-start justify-center p-4 md:p-6 py-8 md:py-12 relative overflow-y-auto">
       <MandalaFrame minimal />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-xl w-full bg-white p-8 md:p-12 rounded-[2rem] border border-theme-200 shadow-xl relative z-20"
+        className="max-w-xl w-full bg-white p-6 md:p-12 rounded-[2rem] border border-theme-200 shadow-xl relative z-20"
       >
+        {/* Header */}
         <div className="flex items-center gap-4 mb-8">
           <div className="p-3 bg-theme-100 rounded-2xl text-theme-600">
             <Settings className="w-6 h-6" />
@@ -1119,21 +1148,22 @@ function AdminPage() {
           </div>
         </div>
 
-        <div className="space-y-8">
-          <div className="grid grid-cols-3 gap-4">
+        <div className="space-y-6">
+          {/* Form Fields */}
+          <div className="grid grid-cols-3 gap-3 md:gap-4">
             <div className="col-span-1 space-y-2">
               <label className="text-[10px] uppercase font-bold text-stone-400 tracking-widest">Prefix</label>
               <select
                 value={prefix}
-                onChange={(e) => setPrefix(e.target.value)}
-                className="w-full bg-stone-50 border border-theme-100 p-4 rounded-xl focus:outline-none focus:border-theme-400 font-cinzel text-sm"
+                onChange={(e) => { setPrefix(e.target.value); setGenerated(false); }}
+                className="w-full bg-stone-50 border border-theme-100 p-3 md:p-4 rounded-xl focus:outline-none focus:border-theme-400 font-cinzel text-sm"
               >
                 <option>Mr.</option>
                 <option>Mrs.</option>
-                <option>Ms.</option>
-                <option>Mr. & Mrs.</option>
-                <option>Dr.</option>
+                <option>Miss</option>
+                <option>Mr. &amp; Mrs.</option>
                 <option>Family</option>
+                <option>Dear</option>
               </select>
             </div>
             <div className="col-span-2 space-y-2">
@@ -1141,55 +1171,77 @@ function AdminPage() {
               <input
                 type="text"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Enter guest name"
-                className="w-full bg-stone-50 border border-theme-100 p-4 rounded-xl focus:outline-none focus:border-theme-400 font-cinzel"
+                onChange={(e) => { setName(e.target.value); setGenerated(false); }}
+                placeholder="e.g. Sanjaya"
+                className="w-full bg-stone-50 border border-theme-100 p-3 md:p-4 rounded-xl focus:outline-none focus:border-theme-400 font-cinzel"
               />
             </div>
           </div>
 
-          <div className="p-6 bg-theme-50 rounded-2xl border border-theme-100 space-y-4">
-            <div className="flex justify-between items-center">
-              <p className="text-[10px] uppercase font-bold text-theme-600 tracking-widest">Live Preview</p>
-              <span className="text-[8px] uppercase text-stone-400">Appearance on Front Screen</span>
-            </div>
-            <div className="text-center space-y-2 py-4 bg-white/50 rounded-xl border border-white/80">
-              <p className="text-[10px] text-theme-700 font-bold uppercase tracking-[0.4em]">Specially For You</p>
-              <h3 className="font-cinzel text-xl text-stone-800">{guestName || "Guest Name"}</h3>
-              <p className="text-[9px] text-stone-500 tracking-[0.2em] uppercase font-light">Are Cordially Invited</p>
+
+          {/* Generated Link Display */}
+          <div className="space-y-2">
+            <label className="text-[10px] uppercase font-bold text-stone-400 tracking-widest">Invitation Link</label>
+            <div className="bg-stone-50 border border-theme-100 p-3 md:p-4 rounded-xl text-xs text-stone-500 overflow-hidden break-all select-all min-h-[48px] flex items-center">
+              {name ? generatedLink : <span className="text-stone-300 italic">Enter guest name to generate link...</span>}
             </div>
           </div>
 
-          <div className="space-y-3">
-            <label className="text-[10px] uppercase font-bold text-stone-400 tracking-widest">Unique Invitation Link</label>
-            <div className="flex gap-2">
-              <input
-                readOnly
-                value={name ? generatedLink : "Enter name above..."}
-                className="flex-1 bg-stone-50 border border-theme-100 p-4 rounded-xl text-xs text-stone-500 overflow-hidden text-ellipsis"
-              />
-              <button
-                onClick={handleCopy}
-                disabled={!name}
-                className={`p-4 rounded-xl transition-all ${copied ? 'bg-green-500 text-white' : 'bg-theme-800 text-white hover:bg-theme-900 disabled:opacity-50'}`}
-              >
-                {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
-              </button>
-            </div>
+          {/* Action Buttons */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <button
+              onClick={handleGenerate}
+              disabled={!name}
+              className="bg-theme-800 text-white py-3 md:py-4 rounded-full font-bold uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-theme-900 transition-all flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-theme-900/10"
+            >
+              <Sparkles className="w-4 h-4" />
+              Generate Link
+            </button>
+            <button
+              onClick={handleCopyLink}
+              disabled={!name}
+              className={`py-3 md:py-4 rounded-full font-bold uppercase tracking-widest text-[9px] md:text-[10px] transition-all flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed border ${copiedLink ? 'bg-green-500 text-white border-green-500' : 'border-theme-300 text-theme-700 hover:bg-theme-50'}`}
+            >
+              {copiedLink ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+              {copiedLink ? "Copied!" : "Copy Link"}
+            </button>
+            <button
+              onClick={handleCopyMessage}
+              disabled={!name}
+              className={`py-3 md:py-4 rounded-full font-bold uppercase tracking-widest text-[9px] md:text-[10px] transition-all flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed border ${copiedMsg ? 'bg-green-500 text-white border-green-500' : 'border-theme-300 text-theme-700 hover:bg-theme-50'}`}
+            >
+              {copiedMsg ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+              {copiedMsg ? "Copied!" : "Copy Message"}
+            </button>
           </div>
 
-          <div className="pt-4 flex gap-4">
+          {/* Message Preview */}
+          {generated && name && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="space-y-2"
+            >
+              <label className="text-[10px] uppercase font-bold text-stone-400 tracking-widest">Message Preview</label>
+              <div className="bg-stone-50 border border-theme-100 p-4 md:p-6 rounded-2xl text-sm text-stone-600 whitespace-pre-wrap leading-relaxed font-light">
+                {messageTemplate}
+              </div>
+            </motion.div>
+          )}
+
+          {/* Footer Actions */}
+          <div className="pt-2 flex gap-3">
             <button
               onClick={() => window.open(generatedLink, '_blank')}
               disabled={!name}
-              className="flex-1 border border-theme-300 text-theme-700 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-theme-50 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+              className="flex-1 border border-theme-300 text-theme-700 py-3 md:py-4 rounded-full font-bold uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-theme-50 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
             >
               <ExternalLink className="w-4 h-4" />
               Preview Page
             </button>
             <Link
               to="/"
-              className="flex-1 bg-white border border-stone-200 text-stone-500 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-stone-50 transition-all flex items-center justify-center"
+              className="flex-1 bg-white border border-stone-200 text-stone-500 py-3 md:py-4 rounded-full font-bold uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-stone-50 transition-all flex items-center justify-center"
             >
               Back to site
             </Link>
