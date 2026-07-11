@@ -593,31 +593,43 @@ function WeddingInvitation() {
 
               <div className="max-w-[1000px] w-full flex flex-col items-center text-center relative z-10">
                 <motion.div
-                  initial={{ opacity: 0, y: -20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center mb-8 md:mb-16"
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  className="flex flex-col items-center mb-8 md:mb-16 relative w-full"
                 >
                   <div className="w-px h-16 md:h-24 bg-gradient-to-b from-transparent to-theme-400 mb-6 md:mb-10" />
+                  
+                  {/* Background glow effect */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-4xl h-full bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-theme-200/30 to-transparent blur-[80px] pointer-events-none" />
+                  
                   {guestName ? (
-                    <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center bg-white/40 p-8 sm:p-16 rounded-[3rem] border border-white/60 shadow-[0_20px_40px_rgba(176,137,104,0.05)] backdrop-blur-sm w-[90%] md:w-full">
-                      <span className="text-theme-700 uppercase tracking-[0.5em] text-xs sm:text-sm font-bold mb-8 block text-center">Cordially Invited</span>
+                    <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center bg-white/40 p-10 sm:p-16 rounded-[3rem] border border-white/60 shadow-[0_20px_40px_rgba(176,137,104,0.05)] backdrop-blur-sm w-[90%] md:w-full">
+                      <span className="text-[#A67C52] uppercase tracking-[0.5em] text-xs sm:text-sm font-bold mb-8 block text-center">
+                        Cordially Invited
+                      </span>
+                      
                       <h2 className="text-4xl sm:text-6xl md:text-7xl font-playball text-stone-800 mb-8 drop-shadow-sm flex flex-col md:flex-row items-center gap-3 md:gap-6 text-center">
-                        <span className="italic font-light text-stone-500 text-3xl sm:text-5xl font-serif">Dear</span>
-                        <span className="text-theme-900 font-semibold relative capitalize inline-block">
+                        <span className="italic font-script font-light text-stone-500 text-4xl sm:text-5xl">Dear</span> 
+                        <span className="text-[#A67C52] font-semibold relative capitalize inline-block">
                           {guestName}
-                          <Sparkles className="absolute -top-6 -right-8 w-6 h-6 text-theme-500 animate-pulse opacity-80" />
-                          <Sparkles className="absolute -bottom-2 -left-6 w-4 h-4 text-theme-500 animate-pulse opacity-60" style={{ animationDelay: '1s' }} />
+                          <Sparkles className="absolute -top-6 -right-8 w-6 h-6 text-[#D4AF37] animate-pulse opacity-80" />
+                          <Sparkles className="absolute -bottom-2 -left-6 w-4 h-4 text-[#D4AF37] animate-pulse opacity-60" style={{ animationDelay: '1s' }} />
                         </span>
                       </h2>
+
                       <p className="text-xl sm:text-2xl font-serif text-stone-600 italic leading-relaxed max-w-2xl text-center">
                         We would be absolutely honored by your presence to share in the joy of our wedding celebration.
                       </p>
                     </div>
                   ) : (
-                    <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center bg-white/40 p-8 sm:p-16 rounded-[3rem] border border-white/60 shadow-[0_20px_40px_rgba(176,137,104,0.05)] backdrop-blur-sm w-[90%] md:w-full">
-                      <span className="text-theme-700 uppercase tracking-[0.5em] text-xs sm:text-sm font-bold mb-8 block text-center">Cordially Invited</span>
-                      <p className="text-xl sm:text-2xl font-serif text-stone-600 italic leading-relaxed max-w-2xl text-center">
+                    <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center bg-white/40 p-10 sm:p-16 rounded-[3rem] border border-white/60 shadow-[0_20px_40px_rgba(176,137,104,0.05)] backdrop-blur-sm w-[90%] md:w-full">
+                      <span className="text-[#A67C52] uppercase tracking-[0.5em] text-xs sm:text-sm font-bold mb-8 block text-center">
+                        Cordially Invited
+                      </span>
+                      
+                      <p className="text-xl sm:text-2xl font-serif text-stone-600 italic leading-relaxed max-w-2xl text-center mt-2">
                         We would be absolutely honored by your presence to share in the joy of our wedding celebration.
                       </p>
                     </div>
