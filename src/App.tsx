@@ -599,17 +599,29 @@ function WeddingInvitation() {
                   className="flex flex-col items-center mb-8 md:mb-16"
                 >
                   <div className="w-px h-16 md:h-24 bg-gradient-to-b from-transparent to-theme-400 mb-6 md:mb-10" />
-                  <p className="text-theme-700 text-[9px] md:text-[12px] tracking-[0.4em] md:tracking-[0.6em] uppercase font-bold text-center leading-loose">
-                    {guestName ? (
-                      <>
-                        <span className="font-cinzel text-2xl md:text-4xl text-theme-900 border-b border-theme-400 pb-3 mb-4 inline-block capitalize tracking-[0.2em] px-8 font-semibold">{guestName}</span>
-                        <br />
-                        you are cordially invited to celebrate the union of
-                      </>
-                    ) : (
-                      "You are cordially invited to celebrate the union of"
-                    )}
-                  </p>
+                  {guestName ? (
+                    <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center bg-white/40 p-8 sm:p-16 rounded-[3rem] border border-white/60 shadow-[0_20px_40px_rgba(176,137,104,0.05)] backdrop-blur-sm w-[90%] md:w-full">
+                      <span className="text-theme-700 uppercase tracking-[0.5em] text-xs sm:text-sm font-bold mb-8 block text-center">Cordially Invited</span>
+                      <h2 className="text-4xl sm:text-6xl md:text-7xl font-playball text-stone-800 mb-8 drop-shadow-sm flex flex-col md:flex-row items-center gap-3 md:gap-6 text-center">
+                        <span className="italic font-light text-stone-500 text-3xl sm:text-5xl font-serif">Dear</span>
+                        <span className="text-theme-900 font-semibold relative capitalize inline-block">
+                          {guestName}
+                          <Sparkles className="absolute -top-6 -right-8 w-6 h-6 text-theme-500 animate-pulse opacity-80" />
+                          <Sparkles className="absolute -bottom-2 -left-6 w-4 h-4 text-theme-500 animate-pulse opacity-60" style={{ animationDelay: '1s' }} />
+                        </span>
+                      </h2>
+                      <p className="text-xl sm:text-2xl font-serif text-stone-600 italic leading-relaxed max-w-2xl text-center">
+                        We would be absolutely honored by your presence to share in the joy of our wedding celebration.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center bg-white/40 p-8 sm:p-16 rounded-[3rem] border border-white/60 shadow-[0_20px_40px_rgba(176,137,104,0.05)] backdrop-blur-sm w-[90%] md:w-full">
+                      <span className="text-theme-700 uppercase tracking-[0.5em] text-xs sm:text-sm font-bold mb-8 block text-center">Cordially Invited</span>
+                      <p className="text-xl sm:text-2xl font-serif text-stone-600 italic leading-relaxed max-w-2xl text-center">
+                        We would be absolutely honored by your presence to share in the joy of our wedding celebration.
+                      </p>
+                    </div>
+                  )}
                 </motion.div>
 
 
