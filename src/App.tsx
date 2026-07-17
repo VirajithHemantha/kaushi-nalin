@@ -352,7 +352,7 @@ function WeddingInvitation() {
                 {guestName ? guestName : "Nalin & Kaushi"}
               </h1>
               <p className="text-stone-500 text-sm tracking-[0.2em] font-light">
-                {guestName ? "ARE CORDIALLY INVITED" : "AUGUST 03, 2026"}
+                {guestName ? "YOU ARE CORDIALLY INVITED" : "AUGUST 03, 2026"}
               </p>
             </motion.div>
 
